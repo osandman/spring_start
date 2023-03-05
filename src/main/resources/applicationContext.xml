@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    <context:component-scan base-package="ch0_ex1_xml_app_context"/>-->
+    <context:property-placeholder location="app.properties.properties"/>
+    <bean id="myPet"
+          class="ch0_ex1_xml_app_context.Dog">
+        <constructor-arg value="${pet.name}"/>
+        <property name="age" value="${pet.age}"/>
+    </bean>
+
+    <bean id="me"
+          class="ch0_ex1_xml_app_context.Person">
+        <constructor-arg ref="myPet"/>
+        <property name="firstName" value="${person.name}"/>
+        <property name="age" value="${person.age}"/>
+    </bean>
+
+</beans>
