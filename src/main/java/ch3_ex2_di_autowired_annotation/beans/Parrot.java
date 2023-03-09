@@ -1,5 +1,9 @@
-package ch3_ex1_dependency_injection_bean_annotation.main;
+package ch3_ex2_di_autowired_annotation.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Parrot {
     private String name;
 

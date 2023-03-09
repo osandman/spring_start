@@ -1,4 +1,4 @@
-package ch3_ex1_dependency_injection_bean_annotation.main;
+package ch3_ex1_di_bean_annotation_qualifier.main;
 
 public class Person {
     private String name;
