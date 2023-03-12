@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class NotificationService {
-    private final AbstractNotificationProxy proxy;
+    private AbstractNotificationProxy proxy;
+
     private final NotificationRepository repository;
     private final Printer printer;
 
@@ -29,6 +30,9 @@ public class NotificationService {
     public void publishNotification(AbstractNotification notification, String sendTo) {
         proxy.setSentTo(sendTo);
         publishNotification(notification);
+    }
+    public void setProxy(AbstractNotificationProxy proxy) {
+        this.proxy = proxy;
     }
 
 }

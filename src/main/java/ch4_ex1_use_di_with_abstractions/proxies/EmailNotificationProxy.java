@@ -15,7 +15,7 @@ public class EmailNotificationProxy extends AbstractNotificationProxy {
 
     @Override
     public void sendNotification(AbstractNotification notification) {
-        System.out.println("# Send notification to: " + getSentTo());
+        System.out.println("# Send notification to email: " + getSentTo());
     }
 
 }

@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 public class PushNotificationProxy extends AbstractNotificationProxy {
     private final String device;
 
-    public PushNotificationProxy(@Value("notification.push") String email) {
+    public PushNotificationProxy(@Value("${notification.push}") String email) {
         this.device = email;
     }
 
     @Override
     public void sendNotification(AbstractNotification notification) {
-        System.out.println("# Send notification to: " + device);
+        System.out.println("# Send notification to push on: " + device);
     }
 }
