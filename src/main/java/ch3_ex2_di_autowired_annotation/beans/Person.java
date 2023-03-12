@@ -6,7 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Person {
     private String name;
-    private final Parrot parrot;
+//    @Autowired // Field injection is not recommended
+    private Parrot parrot;
+
+    public Person() {
+    }
 
     @Autowired  // after Spring 4.3 may not specify if only one constructor
     public Person(Parrot parrot) {
@@ -23,6 +27,10 @@ public class Person {
 
     public Parrot getParrot() {
         return parrot;
+    }
+
+    public void setParrot(Parrot parrot) {
+        this.parrot = parrot;
     }
 
     @Override
